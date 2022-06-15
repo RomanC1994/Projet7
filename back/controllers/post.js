@@ -31,4 +31,7 @@ exports.deletePost = (req, res, next) => {
               .catch(error => res.status(400).json({ error }));
   };
 
+exports.PatchPost = (req, res, next) => {
+  console.log("Salut!")
+};
 

@@ -4,8 +4,8 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const postCtrl = require('../controllers/post');
 
-router.post('/Home', postCtrl.createPost);
+router.post('/Home', auth, postCtrl.createPost);
 router.get('/Home', postCtrl.findAllPosts);
-router.delete('/Profil', postCtrl.deletePost);
+router.delete('/Profil', auth, postCtrl.deletePost);
 
 module.exports = router;
