@@ -12,7 +12,6 @@ const apiLimiter = rateLimit({
 	legacyHeaders: false,
 })
 
-const userRoutes = require('./routes/user');
 const postRoutes = require('./routes/post');
 const path = require('path');
 
@@ -35,9 +34,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(bodyParser.json());
 
-app.use('/api/auth', userRoutes);
-
-app.use('/api/Home', postRoutes);
+app.use('/api/', postRoutes);
 
 app.use(helmet());
 
